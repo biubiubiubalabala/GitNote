@@ -1,1 +1,23 @@
-hhhh
+#如何将本地文件通过gitbash上传到GitHub
+
+1.通过cd指令进入到要传输的文件内部，可以用pwd来检查是否到达相应的文件中
+
+2.然后用#git init命令来新建一个git(回车后看命令返回的结果，如果说在重复创建，那就说明原来文件中已经有了一个git,删掉它继续)
+
+3.创建之后通过#git status命令查看当前分支的状态，应该是文件夹中的那个想要传输的文件显示为红色，就是等待被add进staging中
+
+4.然后通过#git add 文件名.后缀 将这个文件add到staging中
+
+5.怒敲回车后，用#git status查看状态，此时此文件应该是绿色的了
+
+6.然后用#git commit 提交文件，或者可以加 -m 参数然后输入引号再输入所做出的改动
+
+7.但是现在还不能用#git push origin master 来把 这个文件上传到Github上，因为这个文件使我们本地电脑上的，所以不具备远程遥控的remote.
+
+8.然后进入Github中，新建一个repo,不要initialized(不要勾选，因为我们选择本地上传)，然后在弹出的页面中复制地址
+
+9.在terminal中用#git remote add <remote的名字，最好用origin> 复制的地址   用来创建一个新的远程遥控
+
+10.用#git remote 查看创建的结果
+
+11.接下来用#git push origin(ps:这个名字就是之前创建的remote的名字) master 通过远程遥控将我们的文件上传到Github.
